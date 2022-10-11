@@ -101,10 +101,11 @@ $dbconnect = mysqli_connect('localhost', 'root', '', 'cbt');
 
     <!-- Header section -->
     <header class="header-section clearfix">
-        <a href="index.html" class="site-logo">
+        <a href="studentProfile.php" class="site-logo">
             <img src="img/logo.png" alt="">
         </a>
         <div class="header-right">
+        <a href="logout.php" class="hr-btn1"><i class="fa fa-sign-out"></i> log out</a>
             <a href="#" class="hr-btn">Time left</a>
             <a href="#" class="time">12:00</a>
         </div>
@@ -139,11 +140,11 @@ $dbconnect = mysqli_connect('localhost', 'root', '', 'cbt');
                 $ResultCheck = mysqli_query($dbconnect, $Check_Pressent);
                 $COUNT = mysqli_fetch_array($ResultCheck);
                 // echo $COUNT[0];
-                if($COUNT >1){
+                if($COUNT >0){
                     session_destroy();
                     echo"<script type=\"text/javascript\"> 
                     alert(\"SORRY YOU CAN'T RETAKE THIS EXAM AGAIN WAIT FOR NEXT YEAR!!!\");
-                    window.location = \"index.php\"</script>";
+                    window.location = \"logout.php\"</script>";
                 }
                 else
                 {
@@ -184,7 +185,7 @@ $dbconnect = mysqli_connect('localhost', 'root', '', 'cbt');
                         $answerSize = sizeof($correctAnswers);
                         $score = 0;
                         for ($result=0; $result<$answerSize; $result++){
-                            if($Array[$result] != $correctAnswers[$result]) {
+                            if($Array[$result] !== $correctAnswers[$result]) {
                                 
                                 continue;
                             }
@@ -206,7 +207,7 @@ $dbconnect = mysqli_connect('localhost', 'root', '', 'cbt');
 
                                     echo"<script type=\"text/javascript\"> 
                                 alert(\"Thank for participating !\");
-                                window.location = \"setting.php\"</script>";
+                                window.location = \"studentProfile.php\"</script>";
                                 }
                 }
             }

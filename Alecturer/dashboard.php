@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['logged'])){
-    header('Location:index.php');
-}
+if(!isset($_SESSION['logged']) and !isset($_SESSION['identity'])){
+    header('location:index.php');
+}else{
 
 $idlecturer = $_SESSION['identity'];
-// echo $idlecturer;
+}
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -73,7 +73,7 @@ $idlecturer = $_SESSION['identity'];
     </div>
 
     <div class="main-me">
-        <div class="widget-me">
+        <!-- <div class="widget-me">
             <div>
                 <a href=""><span>Result</span></a>
             </div>
@@ -83,7 +83,7 @@ $idlecturer = $_SESSION['identity'];
             <div>
                 <a href=""><span>New Question</span></a>
             </div>
-        </div>
+        </div> -->
         <div class="table-head">
             <div>
                 <h4>Questions</h4>
@@ -99,7 +99,7 @@ $idlecturer = $_SESSION['identity'];
                     <th>Department</th>
                     <th>No. of Questions</th>
                     <th>Status</th>
-                    <th>Edit</th>
+                    <!-- <th>Edit</th> -->
                 
                 </tr>
               
@@ -148,17 +148,22 @@ $idlecturer = $_SESSION['identity'];
 
                         }
                     }
+
+                    if($button == "Completed"){
+                        echo'<td><button id="buttom'.$qarray.'" name="button" value="'.$queID.'">'.$button.'</button></td>';
+                    }
+                    else {
                         
                         echo'
                         <form action="dashboard.php" method="POST">
                             <td><button id="buttom'.$qarray.'" name="button" value="'.$queID.'">'.$button.'</button></td>
                         </form>';
                         echo'
-                        <form action="dashboard.php" method="POST">
+                        <!--<form action="dashboard.php" method="POST">
                             <td><button id="buttom'.$qarray.'" name="editButton" value="'.$queID.'">Edit</button></td>
-                        </form>';
+                        </form>-->';
                         echo'</tr>';
-                        
+                    }
                         
                      }        
             

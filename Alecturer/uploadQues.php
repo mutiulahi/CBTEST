@@ -161,8 +161,8 @@ $dbconnect = mysqli_connect('localhost', 'root', '', 'cbt');
                               '$nameDepartment', '$nameSubject' ,'$answerP')";
                     if(mysqli_query($dbconnect, $queryQ)) {
                         echo"<script type=\"text/javascript\"> 
-                            alert(\"Successful !\");
-                            window.location = \"uploadQues.php\"</script>";
+                            alert(\"Successfully Uploaded\");
+                            window.location = \"dashboard.php\"</script>";
                     }
                    }
                    $counter = $counter+1;

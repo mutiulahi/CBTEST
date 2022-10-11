@@ -45,8 +45,7 @@ if(!isset($_SESSION['logged'])){
 
     <!-- Header section -->
     <header class="header-section clearfix">
-        <a href="index
-		.html" class="site-logo">
+        <a href="studentProfile.php" class="site-logo">
             <img src="img/logo.png" alt="">
         </a>
             <div class="header-right">

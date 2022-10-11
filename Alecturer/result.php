@@ -70,18 +70,16 @@ if(!isset($_SESSION['logged'])){
                 <select name="course" >
                     <option value="">for which course?</option>
                     <option value="MTH101">MTH101</option>
-                    <option value="MTH101">MTH101</option>
-                    <option value="MTH101">MTH101</option>
+                    <option value="CSC 101">CSC101</option>
                 </select>
                 <select  name="department" >
                     <option value="">for which department?</option>
-                    <option value="Computer">Computer</option>
-                    <option value="Computer">Computer</option>
                     <option value="Computer">Computer</option>
                 </select>
                 <select name="seasion" >
                     <option value="">for which seasion?</option>
                     <option value="2020 / 2021">2020 / 2021</option>
+                    <option value="2022 / 2023">2022 / 2023</option>
                 </select>
                 <select name="level" >
                     <option value="">for which level?</option>
